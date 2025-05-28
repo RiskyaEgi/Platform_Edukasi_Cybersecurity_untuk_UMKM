@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRS - Platform Edukasi Cybersecurity untuk UMKM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #003366;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Software Requirements Specification (SRS)</h1>
+  <p><strong>Nama:</strong> Riskya Egi Pratama<br>
+     <strong>NIM:</strong> A710230031</p>
+
+  <h2>1. Pendahuluan</h2>
+  <h3>1.1 Tujuan Penulisan Dokumen</h3>
+  <p>Dokumen ini bertujuan untuk mendefinisikan kebutuhan perangkat lunak dari Platform Edukasi Cybersecurity untuk UMKM, mencakup kebutuhan fungsional, antarmuka, non-fungsional, serta proses manajemen proyek berbasis Agile menggunakan JIRA.</p>
+
+  <h3>1.2 Audien dan Pembaca yang Disarankan</h3>
+  <p>Pengembang perangkat lunak, manajer proyek, penguji (QA), pelaku UMKM, dan penyedia edukasi cybersecurity.</p>
+
+  <h3>1.3 Batasan Produk</h3>
+  <p>Platform pembelajaran berbasis web yang menyajikan modul edukasi, kuis interaktif, pelaporan kemajuan, forum diskusi, dan sertifikat digital.</p>
+
+  <h3>1.4 Definisi dan Istilah</h3>
+  <ul>
+    <li><strong>SRS:</strong> Software Requirements Specification</li>
+    <li><strong>UMKM:</strong> Usaha Mikro, Kecil, dan Menengah</li>
+    <li><strong>Trainer:</strong> Narasumber/pembimbing edukasi</li>
+    <li><strong>Modul:</strong> Unit pembelajaran</li>
+  </ul>
+
+  <h3>1.5 Referensi</h3>
+  <ul>
+    <li>Panduan IEEE 830-1998</li>
+    <li>Dokumentasi REST API</li>
+    <li>Panduan Pengembangan Agile (Scrum)</li>
+    <li>Dokumentasi JIRA Software</li>
+  </ul>
+
+  <h2>2. Deskripsi Keseluruhan</h2>
+  <h3>2.1 Deskripsi Produk</h3>
+  <p>Platform ini memberikan edukasi seputar cybersecurity secara mudah, fleksibel, dan terstruktur bagi pelaku UMKM.</p>
+
+  <h3>2.2 Fungsi Produk</h3>
+  <ul>
+    <li>Registrasi dan login pengguna</li>
+    <li>Akses modul edukasi cybersecurity</li>
+    <li>Kuis evaluasi dan pelaporan nilai</li>
+    <li>Forum diskusi dengan trainer</li>
+    <li>Penerbitan sertifikat</li>
+  </ul>
+
+  <h3>2.3 Penggolongan Karakteristik Pengguna</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Peran</th><th>Tugas</th><th>Hak Akses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>UMKM</td><td>Mengakses materi dan mengikuti kuis</td><td>Dasar</td></tr>
+      <tr><td>Trainer</td><td>Memberi jawaban di forum</td><td>Terbatas</td></tr>
+      <tr><td>Admin</td><td>Kelola modul, user, laporan</td><td>Penuh</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.4 Lingkungan Operasi</h3>
+  <ul>
+    <li>Platform: Web-based</li>
+    <li>Browser: Chrome, Firefox, Safari</li>
+    <li>Backend: Django/Node.js</li>
+    <li>Frontend: React</li>
+    <li>Database: PostgreSQL</li>
+  </ul>
+
+  <h3>2.5 Batasan Desain dan Implementasi</h3>
+  <ul>
+    <li>Bahasa: JavaScript, Python</li>
+    <li>Framework UI: Tailwind CSS</li>
+    <li>Otentikasi: OAuth2 + Email Verification</li>
+  </ul>
+
+  <h3>2.6 Dokumentasi Pengguna</h3>
+  <ul>
+    <li>User Guide</li>
+    <li>Video Tutorial</li>
+    <li>Fitur Bantuan Interaktif</li>
+  </ul>
+
+  <h2>3. Kebutuhan Antarmuka Eksternal</h2>
+  <h3>3.1 User Interfaces</h3>
+  <ul>
+    <li>Login & Registrasi</li>
+    <li>Halaman Modul & Kuis</li>
+    <li>Dashboard Progres</li>
+    <li>Forum Diskusi</li>
+    <li>Sertifikat Digital</li>
+  </ul>
+
+  <h3>3.2 Hardware Interface</h3>
+  <p>Tidak spesifik, berjalan di browser</p>
+
+  <h3>3.3 Software Interface</h3>
+  <p>API eksternal untuk verifikasi email & sertifikat</p>
+
+  <h3>3.4 Communication Interface</h3>
+  <ul>
+    <li>Protokol: HTTPS</li>
+    <li>Format: JSON (REST API)</li>
+  </ul>
+
+  <h2>4. Functional Requirements</h2>
+  <table>
+    <thead>
+      <tr><th>Fitur</th><th>Deskripsi</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>FR1</td><td>Registrasi/Login</td></tr>
+      <tr><td>FR2</td><td>Akses Modul</td></tr>
+      <tr><td>FR3</td><td>Kuis Evaluasi</td></tr>
+      <tr><td>FR4</td><td>Forum Diskusi</td></tr>
+      <tr><td>FR5</td><td>Sertifikat otomatis jika nilai >70%</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Non-Functional Requirements</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Parameter</th><th>Kebutuhan</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>NFR1</td><td>Availability</td><td>Sistem aktif 24/7</td></tr>
+      <tr><td>NFR2</td><td>Usability</td><td>UI mudah digunakan</td></tr>
+      <tr><td>NFR3</td><td>Performance</td><td>Load < 3 detik</td></tr>
+      <tr><td>NFR4</td><td>Portability</td><td>Web + mobile browser</td></tr>
+      <tr><td>NFR5</td><td>Security</td><td>Enkripsi + otentikasi</td></tr>
+      <tr><td>NFR6</td><td>Bahasa</td><td>Bahasa Indonesia</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. Manajemen Proyek di JIRA</h2>
+  <h3>6.1 User Story Mapping</h3>
+  <ul>
+    <li>Sebagai UMKM, saya ingin belajar agar bisnis aman</li>
+    <li>Sebagai admin, saya ingin mengelola modul</li>
+    <li>Sebagai trainer, saya ingin menjawab pertanyaan</li>
+  </ul>
+
+  <h3>6.2 Sprint Planning (Scrum)</h3>
+  <ul>
+    <li>Sprint 1: Login, register, peran user</li>
+    <li>Sprint 2: Akses materi, tracking progres</li>
+    <li>Sprint 3: Soal kuis & nilai</li>
+    <li>Sprint 4: Forum diskusi</li>
+    <li>Sprint 5: Sertifikat & laporan</li>
+    <li>Sprint 6: Pengujian & optimasi</li>
+  </ul>
+
+  <h3>6.3 Bug Tracking</h3>
+  <p>Tiket berisi deskripsi bug, langkah reproduksi, prioritas, status, dan assignee.</p>
+
+  <h3>6.4 Progress Reporting</h3>
+  <ul>
+    <li>Burndown Chart</li>
+    <li>Dashboard JIRA</li>
+    <li>Daily Stand-up Meeting</li>
+  </ul>
+</body>
+</html>
